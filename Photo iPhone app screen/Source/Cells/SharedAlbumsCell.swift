@@ -51,7 +51,7 @@ class SharedAlbums: UICollectionViewCell {
     // MARK: - Configuration
     
     func configuration(model: Model) {
-        self.image.image = UIImage(named: model.image)
+        self.image.image = model.image
     }
     
     override func prepareForReuse() {

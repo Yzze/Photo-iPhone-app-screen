@@ -5,31 +5,37 @@
 //  Created by Ян Жигурс on 17.01.2023.
 //
 
+import UIKit
+
 struct Model: Hashable {
     var mainTitle: String?
     var description: String?
-    var image: String
+    var image: UIImage?
 }
 
 extension Model {
     static let modelsArray = [
-        [Model(mainTitle: "Book Six", description: String(Int.random(in: 0...300)), image: "swift"),
-         Model(mainTitle: "Book Seven", description: String(Int.random(in: 0...300)), image: "swift"),
-         Model(mainTitle: "Book Eight", description: String(Int.random(in: 0...300)), image: "swift"),
-         Model(mainTitle: "Book Nine", description: String(Int.random(in: 0...300)), image: "swift"),
-         Model(mainTitle: "Book Ten", description: String(Int.random(in: 0...300)), image: "swift"),
-         Model(mainTitle: "Book Eleven", description: String(Int.random(in: 0...300)), image: "swift"),
-         Model(mainTitle: "Book Twelve", description: String(Int.random(in: 0...300)), image: "swift"),
-         Model(mainTitle: "Book Thirteen", description: String(Int.random(in: 0...300)), image: "swift")
+        [Model(mainTitle: "One", description: String(Int.random(in: 0...300)), image: .init(named: "swift")),
+         Model(mainTitle: "Two", description: String(Int.random(in: 0...300)), image: .init(named: "swift")),
+         Model(mainTitle: "Three", description: String(Int.random(in: 0...300)), image: .init(named: "swift")),
+         Model(mainTitle: "Four", description: String(Int.random(in: 0...300)), image: .init(named: "swift")),
+         Model(mainTitle: "Five", description: String(Int.random(in: 0...300)), image: .init(named: "swift")),
+         Model(mainTitle: "Six", description: String(Int.random(in: 0...300)), image: .init(named: "swift")),
+         Model(mainTitle: "Seven", description: String(Int.random(in: 0...300)), image: .init(named: "swift")),
+         Model(mainTitle: "Eight", description: String(Int.random(in: 0...300)), image: .init(named: "swift"))
         ],
-        [Model(mainTitle: nil, description: nil, image: "apple"),
-         Model(mainTitle: nil, description: nil, image: "apple"),
-         Model(mainTitle: nil, description: nil, image: "apple"),
-         Model(mainTitle: nil, description: nil, image: "apple")
+        [Model(mainTitle: nil, description: nil, image: .init(named: "apple")),
+         Model(mainTitle: nil, description: nil, image: .init(named: "apple")),
+         Model(mainTitle: nil, description: nil, image: .init(named: "apple")),
+         Model(mainTitle: nil, description: nil, image: .init(named: "apple"))
         ],
-        [Model(mainTitle: "abc", description: "\(Int.random(in: 0...100))", image: "swift"),
-         Model(mainTitle: "dif", description: "\(Int.random(in: 0...100))", image: "swift"),
-         Model(mainTitle: "efg", description: "\(Int.random(in: 0...100))", image: "swift")
+        [Model(mainTitle: "Videos", description: "\(Int.random(in: 0...100))", image: .init(systemName: "video")),
+         Model(mainTitle: "Live Photos", description: "\(Int.random(in: 0...100))", image: .init(systemName: "livephoto")),
+         Model(mainTitle: "Screenshots", description: "\(Int.random(in: 0...100))", image: .init(systemName: "camera.viewfinder"))
+        ],
+        [Model(mainTitle: "Imports", description: "\(Int.random(in: 0...100))", image: .init(systemName: "square.and.arrow.down")),
+         Model(mainTitle: "Hidden", description: "100", image: .init(systemName: "eye.slash")),
+         Model(mainTitle: "Recently Deleted", description: "5", image:.init(systemName: "trash"))
         ]
     ]
 }

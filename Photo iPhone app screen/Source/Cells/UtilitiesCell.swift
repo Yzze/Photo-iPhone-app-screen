@@ -13,12 +13,13 @@ class Utilities: UICollectionViewCell {
     
     private lazy var label: UILabel = {
         let label = UILabel()
-        label.textColor = .blue
+        label.textColor = .systemBlue
         return label
     }()
     
     private lazy var image: UIImageView = {
         let image = UIImageView()
+        image.tintColor = .systemBlue
         return image
     }()
     
@@ -56,30 +57,29 @@ class Utilities: UICollectionViewCell {
     private func setupLayout() {
         
         image.snp.makeConstraints { make in
-            make.width.equalTo(25)
-            make.height.equalTo(25)
-            make.left.top.bottom.equalTo(contentView)
+            make.centerX.equalTo(contentView.snp.centerX).offset(10)
         }
         
         label.snp.makeConstraints { make in
-            make.left.equalTo(image.snp.right).offset(10)
+            make.left.equalTo(contentView.snp.right).offset(35)
             make.centerY.equalTo(image).offset(0)
         }
         
         numberOfShots.snp.makeConstraints{ make in
-            make.left.equalTo(image.snp.right).offset(295)
+            make.width.equalTo(30)
+            make.left.equalTo(contentView.snp.right).offset(305)
             make.centerY.equalTo(image).offset(0)
         }
         
         accessoryImage.snp.makeConstraints { make in
-            make.left.equalTo(image.snp.right).offset(320)
+            make.left.equalTo(contentView.snp.right).offset(340)
             make.centerY.equalTo(image).offset(0)
         }
     }
     
     func configuration(model: Model) {
         self.label.text = model.mainTitle
-        self.image.image = UIImage(named: model.image)
+        self.image.image = model.image
         self.numberOfShots.text = model.description
     }
     

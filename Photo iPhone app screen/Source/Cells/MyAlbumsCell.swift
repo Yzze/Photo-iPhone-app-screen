@@ -80,7 +80,7 @@ class MyAlbums: UICollectionViewCell{
     func configuration(model: Model) {
         self.featuredTitle.text = model.mainTitle
         self.descriptionLabel.text = model.description
-        self.image.image = UIImage(named: model.image)
+        self.image.image = model.image
     }
     
     override func prepareForReuse() {
