@@ -17,6 +17,7 @@ class CollectionViewController: UIViewController {
         collectionView.register(MyAlbums.self, forCellWithReuseIdentifier: MyAlbums.identifier)
         collectionView.register(SharedAlbums.self, forCellWithReuseIdentifier: SharedAlbums.identifier)
         collectionView.register(LiteratureCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: LiteratureCellHeader.identifier)
+        collectionView.register(MediaTypes.self, forCellWithReuseIdentifier: MediaTypes.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         return collectionView
@@ -140,6 +141,29 @@ class CollectionViewController: UIViewController {
                                                                 leading: 0,
                                                                 bottom: 10,
                                                                 trailing: 0)
+                return layoutSection
+            case 3:
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                      heightDimension: .fractionalHeight(1))
+                let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
+                layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 0)
+                
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                       heightDimension: .absolute(44))
+                let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [layoutItem])
+
+                let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
+                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+                
+                let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.98),
+                                                                     heightDimension: .estimated(50))
+                let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: layoutSectionHeaderSize,
+                    elementKind: UICollectionView.elementKindSectionHeader,
+                    alignment: .top)
+                layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
+                
+                return layoutSection
             default:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
                 
@@ -175,6 +199,10 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
             let item = collectionView.dequeueReusableCell(withReuseIdentifier: SharedAlbums.identifier, for: indexPath) as! SharedAlbums
             item.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
             return item
+        case 3:
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MediaTypes.identifier, for: indexPath) as! MediaTypes
+            item.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
+            return item
         default:
             let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbums.identifier, for: indexPath) as! MyAlbums
             item.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
@@ -192,6 +220,10 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
         case 2:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LiteratureCellHeader.identifier, for: indexPath) as! LiteratureCellHeader
             header.title.text = "Shared Albums"
+            return header
+        case 3:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LiteratureCellHeader.identifier, for: indexPath) as! LiteratureCellHeader
+            header.title.text = "Media Types"
             return header
         default:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
