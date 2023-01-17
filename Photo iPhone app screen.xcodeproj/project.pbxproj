@@ -14,6 +14,7 @@
 		2CE29E3F2976E43F0021157B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2CE29E3E2976E43F0021157B /* SnapKit */; };
 		2CE29E412976E8EA0021157B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE29E402976E8EA0021157B /* Model.swift */; };
 		2CE29E432976EC7E0021157B /* MyAlbumsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE29E422976EC7E0021157B /* MyAlbumsCell.swift */; };
+		2CE29E462976F4E50021157B /* LiteratureCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE29E452976F4E50021157B /* LiteratureCellHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		2CE29E342976E0E90021157B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CE29E402976E8EA0021157B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		2CE29E422976EC7E0021157B /* MyAlbumsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlbumsCell.swift; sourceTree = "<group>"; };
+		2CE29E452976F4E50021157B /* LiteratureCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteratureCellHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				2CE29E422976EC7E0021157B /* MyAlbumsCell.swift */,
+				2CE29E452976F4E50021157B /* LiteratureCellHeader.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CE29E2B2976E0E80021157B /* CollectionViewController.swift in Sources */,
+				2CE29E462976F4E50021157B /* LiteratureCellHeader.swift in Sources */,
 				2CE29E272976E0E80021157B /* AppDelegate.swift in Sources */,
 				2CE29E292976E0E80021157B /* SceneDelegate.swift in Sources */,
 				2CE29E412976E8EA0021157B /* Model.swift in Sources */,
