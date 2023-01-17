@@ -15,6 +15,7 @@ class CollectionViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.register(MyAlbums.self, forCellWithReuseIdentifier: MyAlbums.identifier)
+        collectionView.register(SharedAlbums.self, forCellWithReuseIdentifier: SharedAlbums.identifier)
         collectionView.register(LiteratureCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: LiteratureCellHeader.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -99,7 +100,59 @@ class CollectionViewController: UIViewController {
                 layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
                 
                 return layoutSection
-            default: break
+            case 2:
+                let itemSize = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(0.5),
+                    heightDimension: .fractionalHeight(1)
+                )
+                let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
+                layoutItem.contentInsets = .init(top: 0,
+                                                 leading: 15,
+                                                 bottom: 0,
+                                                 trailing: 0)
+                
+                let groupSize = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1.1),
+                    heightDimension: .estimated(250)
+                )
+                
+                let layoutGroup = NSCollectionLayoutGroup.horizontal(
+                    layoutSize: groupSize,
+                    subitems: [layoutItem]
+                )
+                
+                let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
+                layoutSection.orthogonalScrollingBehavior = .continuous
+                
+                
+                
+                let layoutSectionHeaderSize = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(0.93),
+                    heightDimension: .estimated(80)
+                )
+                let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: layoutSectionHeaderSize,
+                    elementKind: UICollectionView.elementKindSectionHeader,
+                    alignment: .top
+                )
+                layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
+                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0,
+                                                                leading: 0,
+                                                                bottom: 10,
+                                                                trailing: 0)
+            default:
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+                
+                let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
+                layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
+                
+                let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(300))
+                let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
+                
+                let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
+                layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
+                
+                return layoutSection
             }
         }
     }
@@ -118,6 +171,10 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
             let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbums.identifier, for: indexPath) as! MyAlbums
             item.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
             return item
+        case 2:
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: SharedAlbums.identifier, for: indexPath) as! SharedAlbums
+            item.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
+            return item
         default:
             let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbums.identifier, for: indexPath) as! MyAlbums
             item.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
@@ -131,6 +188,10 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
         case 1:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LiteratureCellHeader.identifier, for: indexPath) as! LiteratureCellHeader
             header.title.text = "My Albums"
+            return header
+        case 2:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LiteratureCellHeader.identifier, for: indexPath) as! LiteratureCellHeader
+            header.title.text = "Shared Albums"
             return header
         default:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
