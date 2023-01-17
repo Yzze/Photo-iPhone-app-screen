@@ -12,5 +12,14 @@ struct Model: Hashable {
 }
 
 extension Model {
-    static let modelsArray = [[]]
+    static let modelsArray = [
+        [Model(mainTitle: "Book Six", description: String(Int.random(in: 0...300)), image: "swift"),
+         Model(mainTitle: "Book Seven", description: String(Int.random(in: 0...300)), image: "swift"),
+         Model(mainTitle: "Book Eight", description: String(Int.random(in: 0...300)), image: "swift"),
+         Model(mainTitle: "Book Nine", description: String(Int.random(in: 0...300)), image: "swift"),
+         Model(mainTitle: "Book Ten", description: String(Int.random(in: 0...300)), image: "swift"),
+         Model(mainTitle: "Book Eleven", description: String(Int.random(in: 0...300)), image: "swift"),
+         Model(mainTitle: "Book Twelve", description: String(Int.random(in: 0...300)), image: "swift"),
+         Model(mainTitle: "Book Thirteen", description: String(Int.random(in: 0...300)), image: "swift")]
+    ]
 }
