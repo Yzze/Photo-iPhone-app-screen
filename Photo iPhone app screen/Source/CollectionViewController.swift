@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import SnapKit
 
 class CollectionViewController: UIViewController {
     
     // MARK: - Outlets
     
     private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: )
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.delegate = self
         collectionView.dataSource = self
         return collectionView
@@ -48,6 +49,9 @@ class CollectionViewController: UIViewController {
     }
     
     private func setupLayout() {
+        collectionView.snp.makeConstraints { make in
+            make.top.right.bottom.left.equalTo(view)
+        }
     }
     
     @objc func tap() {
@@ -55,6 +59,18 @@ class CollectionViewController: UIViewController {
     }
     
     // MARK: - CollectionViewLayout
+    
+    private func createLayout() -> UICollectionViewCompositionalLayout {
+        return UICollectionViewCompositionalLayout { (section, _) -> NSCollectionLayoutSection in
+            
+            switch section {
+            case 0: break
+            case 1: break
+            case 2: break
+            default: break
+            }
+        }
+    }
 }
 
 // MARK: - Collection Setup
