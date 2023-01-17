@@ -5,12 +5,12 @@
 //  Created by Ян Жигурс on 17.01.2023.
 //
 
-struct CompositionalModel: Hashable {
+struct Model: Hashable {
     var mainTitle: String?
     var description: String?
     var image: String
 }
 
-extension CompositionalModel {
+extension Model {
     static let modelsArray = [[]]
 }

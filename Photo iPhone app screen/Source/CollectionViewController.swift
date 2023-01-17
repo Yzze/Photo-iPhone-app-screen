@@ -14,6 +14,8 @@ class CollectionViewController: UIViewController {
     
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+        collectionView.register(MyAlbums.self, forCellWithReuseIdentifier: MyAlbums.identifier)
+
         collectionView.delegate = self
         collectionView.dataSource = self
         return collectionView
@@ -64,9 +66,9 @@ class CollectionViewController: UIViewController {
         return UICollectionViewCompositionalLayout { (section, _) -> NSCollectionLayoutSection in
             
             switch section {
-            case 0: break
             case 1: break
             case 2: break
+            case 3: break
             default: break
             }
         }
