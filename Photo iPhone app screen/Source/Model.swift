@@ -26,6 +26,10 @@ extension Model {
          Model(mainTitle: nil, description: nil, image: "apple"),
          Model(mainTitle: nil, description: nil, image: "apple"),
          Model(mainTitle: nil, description: nil, image: "apple")
+        ],
+        [Model(mainTitle: "abc", description: "\(Int.random(in: 0...100))", image: "swift"),
+         Model(mainTitle: "dif", description: "\(Int.random(in: 0...100))", image: "swift"),
+         Model(mainTitle: "efg", description: "\(Int.random(in: 0...100))", image: "swift")
         ]
     ]
 }

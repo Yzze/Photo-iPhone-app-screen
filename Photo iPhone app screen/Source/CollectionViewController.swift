@@ -67,7 +67,7 @@ class CollectionViewController: UIViewController {
     private func createLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { (section, _) -> NSCollectionLayoutSection in
             switch section {
-            case 1:
+            case 0:
                 let itemSize = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
                     heightDimension: .fractionalHeight(0.48)
@@ -101,7 +101,7 @@ class CollectionViewController: UIViewController {
                 layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
                 
                 return layoutSection
-            case 2:
+            case 1:
                 let itemSize = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(0.5),
                     heightDimension: .fractionalHeight(1)
@@ -142,7 +142,7 @@ class CollectionViewController: UIViewController {
                                                                 bottom: 10,
                                                                 trailing: 0)
                 return layoutSection
-            case 3:
+            case 2:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                       heightDimension: .fractionalHeight(1))
                 let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -191,15 +191,15 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
-        case 1:
+        case 0:
             let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbums.identifier, for: indexPath) as! MyAlbums
             item.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
             return item
-        case 2:
+        case 1:
             let item = collectionView.dequeueReusableCell(withReuseIdentifier: SharedAlbums.identifier, for: indexPath) as! SharedAlbums
             item.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
             return item
-        case 3:
+        case 2:
             let item = collectionView.dequeueReusableCell(withReuseIdentifier: MediaTypes.identifier, for: indexPath) as! MediaTypes
             item.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
             return item
@@ -213,15 +213,15 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         switch indexPath.section {
-        case 1:
+        case 0:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LiteratureCellHeader.identifier, for: indexPath) as! LiteratureCellHeader
             header.title.text = "My Albums"
             return header
-        case 2:
+        case 1:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LiteratureCellHeader.identifier, for: indexPath) as! LiteratureCellHeader
             header.title.text = "Shared Albums"
             return header
-        case 3:
+        case 2:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LiteratureCellHeader.identifier, for: indexPath) as! LiteratureCellHeader
             header.title.text = "Media Types"
             return header
