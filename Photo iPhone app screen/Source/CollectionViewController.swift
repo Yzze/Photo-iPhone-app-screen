@@ -18,6 +18,13 @@ class CollectionViewController: UIViewController {
         return collectionView
     }()
     
+    private lazy var barItem: UIBarButtonItem = {
+        var bar = UIBarButtonItem()
+        bar = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .done, target: self, action: #selector(tap))
+        bar.tintColor = .systemBlue
+        return bar
+    }()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -33,6 +40,7 @@ class CollectionViewController: UIViewController {
         title = "Albums"
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.leftBarButtonItem = barItem
     }
     
     private func setupHierarchy() {
@@ -41,7 +49,6 @@ class CollectionViewController: UIViewController {
     
     private func setupLayout() {
     }
-    
     
     @objc func tap() {
         print("Click")
