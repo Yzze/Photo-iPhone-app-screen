@@ -17,6 +17,7 @@
 		2CE29E462976F4E50021157B /* LiteratureCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE29E452976F4E50021157B /* LiteratureCellHeader.swift */; };
 		2CE29E482976F7AE0021157B /* SharedAlbumsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE29E472976F7AE0021157B /* SharedAlbumsCell.swift */; };
 		2CE29E4A2976FAFB0021157B /* MediaTypesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE29E492976FAFB0021157B /* MediaTypesCell.swift */; };
+		2CE29E4C2976FFDF0021157B /* UtilitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE29E4B2976FFDF0021157B /* UtilitiesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		2CE29E452976F4E50021157B /* LiteratureCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteratureCellHeader.swift; sourceTree = "<group>"; };
 		2CE29E472976F7AE0021157B /* SharedAlbumsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedAlbumsCell.swift; sourceTree = "<group>"; };
 		2CE29E492976FAFB0021157B /* MediaTypesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTypesCell.swift; sourceTree = "<group>"; };
+		2CE29E4B2976FFDF0021157B /* UtilitiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				2CE29E452976F4E50021157B /* LiteratureCellHeader.swift */,
 				2CE29E472976F7AE0021157B /* SharedAlbumsCell.swift */,
 				2CE29E492976FAFB0021157B /* MediaTypesCell.swift */,
+				2CE29E4B2976FFDF0021157B /* UtilitiesCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			files = (
 				2CE29E2B2976E0E80021157B /* CollectionViewController.swift in Sources */,
 				2CE29E462976F4E50021157B /* LiteratureCellHeader.swift in Sources */,
+				2CE29E4C2976FFDF0021157B /* UtilitiesCell.swift in Sources */,
 				2CE29E272976E0E80021157B /* AppDelegate.swift in Sources */,
 				2CE29E292976E0E80021157B /* SceneDelegate.swift in Sources */,
 				2CE29E4A2976FAFB0021157B /* MediaTypesCell.swift in Sources */,
