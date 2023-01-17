@@ -9,15 +9,16 @@
 /* Begin PBXBuildFile section */
 		2CE29E272976E0E80021157B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE29E262976E0E80021157B /* AppDelegate.swift */; };
 		2CE29E292976E0E80021157B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE29E282976E0E80021157B /* SceneDelegate.swift */; };
-		2CE29E2B2976E0E80021157B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE29E2A2976E0E80021157B /* ViewController.swift */; };
+		2CE29E2B2976E0E80021157B /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE29E2A2976E0E80021157B /* CollectionViewController.swift */; };
 		2CE29E302976E0E90021157B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE29E2F2976E0E90021157B /* Assets.xcassets */; };
+		2CE29E3F2976E43F0021157B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2CE29E3E2976E43F0021157B /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2CE29E232976E0E80021157B /* Photo iPhone app screen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo iPhone app screen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE29E262976E0E80021157B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CE29E282976E0E80021157B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2CE29E2A2976E0E80021157B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2CE29E2A2976E0E80021157B /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		2CE29E2F2976E0E90021157B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CE29E342976E0E90021157B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE29E3F2976E43F0021157B /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +74,7 @@
 		2CE29E3B2976E1670021157B /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				2CE29E2A2976E0E80021157B /* ViewController.swift */,
+				2CE29E2A2976E0E80021157B /* CollectionViewController.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -101,6 +103,9 @@
 			dependencies = (
 			);
 			name = "Photo iPhone app screen";
+			packageProductDependencies = (
+				2CE29E3E2976E43F0021157B /* SnapKit */,
+			);
 			productName = "Photo iPhone app screen";
 			productReference = 2CE29E232976E0E80021157B /* Photo iPhone app screen.app */;
 			productType = "com.apple.product-type.application";
@@ -129,6 +134,9 @@
 				Base,
 			);
 			mainGroup = 2CE29E1A2976E0E80021157B;
+			packageReferences = (
+				2CE29E3D2976E43F0021157B /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 2CE29E242976E0E80021157B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -154,7 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CE29E2B2976E0E80021157B /* ViewController.swift in Sources */,
+				2CE29E2B2976E0E80021157B /* CollectionViewController.swift in Sources */,
 				2CE29E272976E0E80021157B /* AppDelegate.swift in Sources */,
 				2CE29E292976E0E80021157B /* SceneDelegate.swift in Sources */,
 			);
@@ -359,6 +367,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2CE29E3D2976E43F0021157B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2CE29E3E2976E43F0021157B /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CE29E3D2976E43F0021157B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2CE29E1B2976E0E80021157B /* Project object */;
 }
