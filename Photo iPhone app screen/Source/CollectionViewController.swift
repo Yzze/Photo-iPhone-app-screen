@@ -66,7 +66,40 @@ class CollectionViewController: UIViewController {
         return UICollectionViewCompositionalLayout { (section, _) -> NSCollectionLayoutSection in
             
             switch section {
-            case 1: break
+            case 1:
+                let itemSize = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .fractionalHeight(0.48)
+                    )
+                let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
+                
+                    layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5,
+                                                             leading: 10,
+                                                             bottom: 5,
+                                                             trailing: 5)
+                
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.47),
+                                                       heightDimension: .fractionalWidth(1.2))
+                
+                let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
+                                                                   subitems: [layoutItem])
+                layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 15,
+                                                                    leading: 5,
+                                                                    bottom: 0,
+                                                                    trailing: 5)
+                
+                let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
+                layoutSection.orthogonalScrollingBehavior = .continuous
+                
+                let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93),
+                                                                     heightDimension: .estimated(50))
+                let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: layoutSectionHeaderSize,
+                    elementKind: UICollectionView.elementKindSectionHeader,
+                    alignment: .top)
+                layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
+                
+                return layoutSection
             case 2: break
             case 3: break
             default: break
@@ -79,17 +112,29 @@ class CollectionViewController: UIViewController {
 
 extension CollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Model.modelsArray[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch indexPath.section {
+        case 1:
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbums.identifier, for: indexPath) as! MyAlbums
+            item.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
+            return item
+        case 2: break
+        case 3: break
+        default: break
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return Model.modelsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
 }
