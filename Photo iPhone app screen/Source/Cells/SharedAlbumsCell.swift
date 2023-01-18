@@ -9,7 +9,7 @@ import UIKit
 
 class SharedAlbums: UICollectionViewCell {
     
-    static let identifier = "SharedAlbums"
+    static let identifier = String(describing: SharedAlbums.self)
     
     // MARK: - Outlets
     

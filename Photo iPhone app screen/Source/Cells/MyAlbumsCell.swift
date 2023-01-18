@@ -10,7 +10,7 @@ import SnapKit
 
 class MyAlbums: UICollectionViewCell{
     
-    static let identifier = "MyAlbums"
+    static let identifier = String(describing: MyAlbums.self)
     
     // MARK: - Outlets
     

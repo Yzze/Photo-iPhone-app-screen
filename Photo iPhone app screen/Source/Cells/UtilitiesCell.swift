@@ -9,7 +9,7 @@ import UIKit
 
 class Utilities: UICollectionViewCell {
     
-    static let identifier = "Utilities"
+    static let identifier = String(describing: Utilities.self)
     
     private lazy var label: UILabel = {
         let label = UILabel()

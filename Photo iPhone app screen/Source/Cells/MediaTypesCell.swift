@@ -9,7 +9,7 @@ import UIKit
 
 class MediaTypes: UICollectionViewCell {
     
-    static let identifier = "MediaTypes"
+    static let identifier = String(describing: MediaTypes.self)
     
     private lazy var label: UILabel = {
         let label = UILabel()

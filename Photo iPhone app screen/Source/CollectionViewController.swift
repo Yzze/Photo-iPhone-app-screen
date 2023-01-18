@@ -163,7 +163,6 @@ class CollectionViewController: UIViewController {
                     elementKind: UICollectionView.elementKindSectionHeader,
                     alignment: .top)
                 layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
-                
                 return layoutSection
             case 3:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
@@ -185,7 +184,6 @@ class CollectionViewController: UIViewController {
                     elementKind: UICollectionView.elementKindSectionHeader,
                     alignment: .top)
                 layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
-                
                 return layoutSection
             default:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
@@ -198,7 +196,6 @@ class CollectionViewController: UIViewController {
                 
                 let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
                 layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
-                
                 return layoutSection
             }
         }
@@ -215,25 +212,25 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbums.identifier, for: indexPath) as! MyAlbums
-            item.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
-            return item
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbums.identifier, for: indexPath) as? MyAlbums
+            item?.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
+            return item ?? UICollectionViewCell()
         case 1:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: SharedAlbums.identifier, for: indexPath) as! SharedAlbums
-            item.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
-            return item
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: SharedAlbums.identifier, for: indexPath) as? SharedAlbums
+            item?.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
+            return item ?? UICollectionViewCell()
         case 2:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MediaTypes.identifier, for: indexPath) as! MediaTypes
-            item.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
-            return item
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MediaTypes.identifier, for: indexPath) as? MediaTypes
+            item?.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
+            return item ?? UICollectionViewCell()
         case 3:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: Utilities.identifier, for: indexPath) as! Utilities
-            item.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
-            return item
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: Utilities.identifier, for: indexPath) as? Utilities
+            item?.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
+            return item ?? UICollectionViewCell()
         default:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbums.identifier, for: indexPath) as! MyAlbums
-            item.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
-            return item
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbums.identifier, for: indexPath) as? MyAlbums
+            item?.configuration(model: Model.modelsArray[indexPath.section][indexPath.item])
+            return item ?? UICollectionViewCell()
         }
     }
     
@@ -241,21 +238,21 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
         
         switch indexPath.section {
         case 0:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LiteratureCellHeader.identifier, for: indexPath) as! LiteratureCellHeader
-            header.title.text = "My Albums"
-            return header
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LiteratureCellHeader.identifier, for: indexPath) as? LiteratureCellHeader
+            header?.title.text = "My Albums"
+            return header ?? UICollectionReusableView()
         case 1:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LiteratureCellHeader.identifier, for: indexPath) as! LiteratureCellHeader
-            header.title.text = "Shared Albums"
-            return header
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LiteratureCellHeader.identifier, for: indexPath) as? LiteratureCellHeader
+            header?.title.text = "Shared Albums"
+            return header ?? UICollectionReusableView()
         case 2:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LiteratureCellHeader.identifier, for: indexPath) as! LiteratureCellHeader
-            header.title.text = "Media Types"
-            return header
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LiteratureCellHeader.identifier, for: indexPath) as? LiteratureCellHeader
+            header?.title.text = "Media Types"
+            return header ?? UICollectionReusableView()
         case 3:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LiteratureCellHeader.identifier, for: indexPath) as! LiteratureCellHeader
-            header.title.text = "Utilities"
-            return header
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LiteratureCellHeader.identifier, for: indexPath) as? LiteratureCellHeader
+            header?.title.text = "Utilities"
+            return header ?? UICollectionReusableView()
         default:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
             return header
