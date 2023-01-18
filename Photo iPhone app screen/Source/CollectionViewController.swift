@@ -80,8 +80,8 @@ class CollectionViewController: UIViewController {
                                                              bottom: 5,
                                                              trailing: 5)
                 
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.47),
-                                                       heightDimension: .fractionalWidth(1.2))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.46),
+                                                       heightDimension: .fractionalWidth(1.15))
                 
                 let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
                                                                    subitems: [layoutItem])
@@ -100,7 +100,10 @@ class CollectionViewController: UIViewController {
                     elementKind: UICollectionView.elementKindSectionHeader,
                     alignment: .top)
                 layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
-                
+                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0,
+                                                                leading: 3,
+                                                                bottom: 5,
+                                                                trailing: 0)
                 return layoutSection
             case 1:
                 let itemSize = NSCollectionLayoutSize(
@@ -109,13 +112,13 @@ class CollectionViewController: UIViewController {
                 )
                 let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
                 layoutItem.contentInsets = .init(top: 0,
-                                                 leading: 15,
+                                                 leading: 12,
                                                  bottom: 0,
-                                                 trailing: 0)
+                                                 trailing: -2)
                 
                 let groupSize = NSCollectionLayoutSize(
-                    widthDimension: .fractionalWidth(1.1),
-                    heightDimension: .estimated(250)
+                    widthDimension: .fractionalWidth(0.92),
+                    heightDimension: .estimated(200)
                 )
                 
                 let layoutGroup = NSCollectionLayoutGroup.horizontal(
@@ -139,7 +142,7 @@ class CollectionViewController: UIViewController {
                 )
                 layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
                 layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0,
-                                                                leading: 0,
+                                                                leading: 5,
                                                                 bottom: 10,
                                                                 trailing: 0)
                 return layoutSection
@@ -154,7 +157,7 @@ class CollectionViewController: UIViewController {
                 let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [layoutItem])
 
                 let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
-                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 17, bottom: 10, trailing: 10)
                 
                 let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.98),
                                                                      heightDimension: .estimated(50))
@@ -176,7 +179,7 @@ class CollectionViewController: UIViewController {
                 let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [layoutItem])
 
                 let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
-                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 17, bottom: 10, trailing: 10)
                 
                 let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.98),
                                                                      heightDimension: .estimated(50))

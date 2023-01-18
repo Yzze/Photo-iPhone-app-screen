@@ -15,7 +15,7 @@ class SharedAlbums: UICollectionViewCell {
     
     private let image: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 10
+        imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFit
         return imageView
@@ -42,8 +42,8 @@ class SharedAlbums: UICollectionViewCell {
     
     private func setupLayout() {
         image.snp.makeConstraints { make in
-            make.width.equalTo(200)
-            make.height.equalTo(200)
+            make.width.equalTo(170)
+            make.height.equalTo(170)
             make.left.top.right.bottom.equalTo(contentView)
         }
     }
