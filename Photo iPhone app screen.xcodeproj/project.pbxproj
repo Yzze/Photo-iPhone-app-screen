@@ -104,8 +104,8 @@
 		2CE29E442976EC890021157B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				2CE29E422976EC7E0021157B /* MyAlbumsCell.swift */,
 				2CE29E452976F4E50021157B /* LiteratureCellHeader.swift */,
+				2CE29E422976EC7E0021157B /* MyAlbumsCell.swift */,
 				2CE29E472976F7AE0021157B /* SharedAlbumsCell.swift */,
 				2CE29E492976FAFB0021157B /* MediaTypesCell.swift */,
 				2CE29E4B2976FFDF0021157B /* UtilitiesCell.swift */,

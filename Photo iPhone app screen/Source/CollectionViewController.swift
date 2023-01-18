@@ -74,7 +74,6 @@ class CollectionViewController: UIViewController {
                     heightDimension: .fractionalHeight(0.48)
                     )
                 let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-                
                     layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5,
                                                              leading: 10,
                                                              bottom: 5,
@@ -88,7 +87,7 @@ class CollectionViewController: UIViewController {
                 layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 15,
                                                                     leading: 5,
                                                                     bottom: 0,
-                                                                    trailing: 5)
+                                                                    trailing: -20)
                 
                 let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
                 layoutSection.orthogonalScrollingBehavior = .continuous
@@ -114,11 +113,11 @@ class CollectionViewController: UIViewController {
                 layoutItem.contentInsets = .init(top: 0,
                                                  leading: 12,
                                                  bottom: 0,
-                                                 trailing: -2)
+                                                 trailing: -3)
                 
                 let groupSize = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(0.92),
-                    heightDimension: .estimated(200)
+                    heightDimension: .estimated(170)
                 )
                 
                 let layoutGroup = NSCollectionLayoutGroup.horizontal(
@@ -128,8 +127,6 @@ class CollectionViewController: UIViewController {
                 
                 let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
                 layoutSection.orthogonalScrollingBehavior = .continuous
-                
-                
                 
                 let layoutSectionHeaderSize = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(0.93),
@@ -141,7 +138,7 @@ class CollectionViewController: UIViewController {
                     alignment: .top
                 )
                 layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
-                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0,
+                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 20,
                                                                 leading: 5,
                                                                 bottom: 10,
                                                                 trailing: 0)

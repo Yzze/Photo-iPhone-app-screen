@@ -31,6 +31,7 @@ class MyAlbums: UICollectionViewCell{
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = 5
         imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         return imageView
     }()
