@@ -9,7 +9,7 @@ import UIKit
 
 class LiteratureCellHeader: UICollectionReusableView {
     
-    static let identifier = "LiteratureCellHeader"
+    static let identifier = String(describing: LiteratureCellHeader.self)
     
     // MARK: - Outlets
     
